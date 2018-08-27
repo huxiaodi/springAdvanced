@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <classPathEntry
+            location="C:/Users/hudi/.m2/repository/mysql/mysql-connector-java/5.1.38/mysql-connector-java-5.1.38.jar"/>
+
+    <context id="MySqlTables" targetRuntime="MyBatis3">
+        <property name="javaFileEncoding" value="UTF-8"/>
+       <!-- <commentGenerator type="genrator.MyCommentGenerator">
+            <property name="addRemarkComments" value="true"/>
+            <property name="suppressAllComments" value="false"/>
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://192.168.1.26:3306/cfctest26"
+                        userId="root"
+                        password="Pwd..123">
+            <property name="useInformationSchema" value="true"></property>
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="true"/>
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="com.example.cache.model.mysql.generator" targetProject="src\main\java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="com.example.cache.dao.mysql.generator" targetProject="src\main\resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.example.cache.dao.mysql.generator"
+                             targetProject="src\main\java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+        <!--
+        第一批需要同步的表
+        货源信息表、车辆基础信息表、驾驶员基础信息表、实际承运人信息表、运单表、派车单信息表、回执单信息表、车载货物信息表
+        cfc_source_goods,cfc_carrier,cfc_receipt,cfc_goods_of_truck
+        -->
+        <!--<table schema="cfc" tableName="cfc_area" domainObjectName="Area" ></table>-->
+        <!--<table schema="cfc" tableName="cfc_source_goods" domainObjectName="SourceGoods" ></table>-->
+        <!--<table schema="cfc" tableName="cfc_truck" domainObjectName="Truck" ></table>-->
+        <!--<table schema="cfc" tableName="cfc_driver" domainObjectName="Driver" ></table>-->
+        <!--<table schema="cfc" tableName="cfc_carrier" domainObjectName="Carrier" ></table>-->
+        <!--<table schema="cfc" tableName="cfc_zc_order" domainObjectName="ZCOrder" ></table>-->
+        <!--<table schema="cfc" tableName="cfc_transport" domainObjectName="Transport" ></table>-->
+        <!--<table schema="cfc" tableName="cfc_receipt" domainObjectName="Receipt" ></table>-->
+        <!--<table schema="cfc" tableName="cfc_goods_of_truck" domainObjectName="GoodsOfTruck" ></table>-->
+        <!--<table schema="cfc" tableName="cfc_platform_info" domainObjectName="PlatformInfo" ></table>-->
+        <!--<table schema="cfc" tableName="cfc_user" domainObjectName="User" ></table>-->
+        <!--<table schema="cfc" tableName="cfc_dept" domainObjectName="Dept">-->
+        <!--<property name="useActualColumnNames" value="true"/>-->
+        <!--</table>-->
+        <!--<table schema="cfc" tableName="cfc_dept_goods" domainObjectName="DeptGoods">-->
+        <!--<property name="useActualColumnNames" value="true"/>-->
+        <!--</table>-->
+        <!-- 资金流水单 -->
+        <!--<table tableName="cash_flow" domainObjectName="CashFlow">-->
+        <!--<property name="useActualColumnNames" value="true"/>-->
+        <!--</table>-->
+        <!--<table tableName="cash_flow_waybill" domainObjectName="CashFlowWaybill">-->
+        <!--<property name="useActualColumnNames" value="true"/>-->
+        <!--</table>-->
+        <!--<table tableName="cash_flow_finance" domainObjectName="CashFlowFinance">-->
+        <!--<property name="useActualColumnNames" value="true"/>-->
+        <!--</table>-->
+        <table schema="cfc" tableName="cfc_user" domainObjectName="User" ></table>
+
+    </context>
+
+</generatorConfiguration>
